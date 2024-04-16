@@ -1,0 +1,450 @@
+<!DOCTYPE html >
+<html >
+  <head >
+    <style>
+        td {text-align: center;}
+        tr {text-align: center;}
+        table {text-align: center;}
+        body {text-align: center;}
+        head {text-align: center;}
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2em;
+        }
+        .border{
+            border-style: solid;
+        }
+        h1{
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2.5em;
+        }
+    </style>	
+  </head >
+  <h1>Tower of Hanoi Description - 50 Disks</h1>
+  <body >
+    <div>
+        <form class = "center">
+            <label for="fname">Move Number:</label><br>
+            <input type="text" id="move" name="moveNum" font-size=2em><br>
+            <button type="button" onClick = "handleClick()"> Submit</button>
+        </form>
+        <p id="message"></p>
+        <br>
+        <br>
+        <table class = "center">
+            <tr>
+                <th class = "border">Disk #</th>
+                <th class = "border">Peg #</th>
+            </tr>
+            <tr> 
+                <td class = "border"> 0  </td > 
+                <td class = "border" id='0'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 1  </td > 
+                <td class = "border" id='1'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 2  </td > 
+                <td class = "border" id='2'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 3  </td > 
+                <td class = "border" id='3'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 4  </td > 
+                <td class = "border" id='4'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 5  </td > 
+                <td class = "border" id='5'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 6  </td > 
+                <td class = "border" id='6'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 7  </td > 
+                <td class = "border" id='7'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 8  </td > 
+                <td class = "border" id='8'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 9  </td > 
+                <td class = "border" id='9'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 10  </td > 
+                <td class = "border" id='10'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 11  </td > 
+                <td class = "border" id='11'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 12  </td > 
+                <td class = "border" id='12'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 13  </td > 
+                <td class = "border" id='13'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 14  </td > 
+                <td class = "border" id='14'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 15  </td > 
+                <td class = "border" id='15'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 16  </td > 
+                <td class = "border" id='16'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 17  </td > 
+                <td class = "border" id='17'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 18  </td > 
+                <td class = "border" id='18'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 19  </td > 
+                <td class = "border" id='19'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 20  </td > 
+                <td class = "border" id='20'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 21  </td > 
+                <td class = "border" id='21'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 22  </td > 
+                <td class = "border" id='22'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 23  </td > 
+                <td class = "border" id='23'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 24  </td > 
+                <td class = "border" id='24'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 25  </td > 
+                <td class = "border" id='25'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 26  </td > 
+                <td class = "border" id='26'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 27  </td > 
+                <td class = "border" id='27'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 28  </td > 
+                <td class = "border" id='28'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 29  </td > 
+                <td class = "border" id='29'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 30  </td > 
+                <td class = "border" id='30'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 31  </td > 
+                <td class = "border" id='31'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 32  </td > 
+                <td class = "border" id='32'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 33  </td > 
+                <td class = "border" id='33'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 34  </td > 
+                <td class = "border" id='34'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 35  </td > 
+                <td class = "border" id='35'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 36  </td > 
+                <td class = "border" id='36'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 37  </td > 
+                <td class = "border" id='37'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 38  </td > 
+                <td class = "border" id='38'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 39  </td > 
+                <td class = "border" id='39'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 40  </td > 
+                <td class = "border" id='40'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 41  </td > 
+                <td class = "border" id='41'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 42  </td > 
+                <td class = "border" id='42'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 43  </td > 
+                <td class = "border" id='43'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 44  </td > 
+                <td class = "border" id='44'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 45  </td > 
+                <td class = "border" id='45'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 46  </td > 
+                <td class = "border" id='46'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 47  </td > 
+                <td class = "border" id='47'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 48  </td > 
+                <td class = "border" id='48'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 49  </td > 
+                <td class = "border" id='49'> 0 </td > 
+            </tr>
+<!--
+            <tr> 
+                <td class = "border"> 50  </td > 
+                <td class = "border" id='50'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 51  </td > 
+                <td class = "border" id='51'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 52  </td > 
+                <td class = "border" id='52'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 53  </td > 
+                <td class = "border" id='53'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 54  </td > 
+                <td class = "border" id='54'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 55  </td > 
+                <td class = "border" id='55'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 56  </td > 
+                <td class = "border" id='56'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 57  </td > 
+                <td class = "border" id='57'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 58  </td > 
+                <td class = "border" id='58'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 59  </td > 
+                <td class = "border" id='59'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 60  </td > 
+                <td class = "border" id='60'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 61  </td > 
+                <td class = "border" id='61'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 62  </td > 
+                <td class = "border" id='62'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 63  </td > 
+                <td class = "border" id='63'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 64  </td > 
+                <td class = "border" id='64'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 65  </td > 
+                <td class = "border" id='65'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 66  </td > 
+                <td class = "border" id='66'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 67  </td > 
+                <td class = "border" id='67'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 68  </td > 
+                <td class = "border" id='68'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 69  </td > 
+                <td class = "border" id='69'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 70  </td > 
+                <td class = "border" id='70'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 71  </td > 
+                <td class = "border" id='71'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 72  </td > 
+                <td class = "border" id='72'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 73  </td > 
+                <td class = "border" id='73'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 74  </td > 
+                <td class = "border" id='74'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 75  </td > 
+                <td class = "border" id='75'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 76  </td > 
+                <td class = "border" id='76'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 77  </td > 
+                <td class = "border" id='77'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 78  </td > 
+                <td class = "border" id='78'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 79  </td > 
+                <td class = "border" id='79'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 80  </td > 
+                <td class = "border" id='80'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 81  </td > 
+                <td class = "border" id='81'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 82  </td > 
+                <td class = "border" id='82'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 83  </td > 
+                <td class = "border" id='83'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 84  </td > 
+                <td class = "border" id='84'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 85  </td > 
+                <td class = "border" id='85'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 86  </td > 
+                <td class = "border" id='86'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 87  </td > 
+                <td class = "border" id='87'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 88  </td > 
+                <td class = "border" id='88'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 89  </td > 
+                <td class = "border" id='89'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 90  </td > 
+                <td class = "border" id='90'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 91  </td > 
+                <td class = "border" id='91'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 92  </td > 
+                <td class = "border" id='92'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 93  </td > 
+                <td class = "border" id='93'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 94  </td > 
+                <td class = "border" id='94'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 95  </td > 
+                <td class = "border" id='95'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 96  </td > 
+                <td class = "border" id='96'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 97  </td > 
+                <td class = "border" id='97'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 98  </td > 
+                <td class = "border" id='98'> 0 </td > 
+            </tr>
+            <tr> 
+                <td class = "border"> 99  </td > 
+                <td class = "border" id='99'> 0 </td > 
+            </tr>
+        -->
+        </table >
+    </div>
+  <script src ="tower.js" > </script>
+ </body >
+ 
+</html >
+
+
